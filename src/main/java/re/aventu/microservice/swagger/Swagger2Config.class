@@ -1,0 +1,12 @@
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {                                    
+    @Bean
+    public Docket api() {                
+        return new Docket(DocumentationType.SWAGGER_2)          
+          .select()                                       
+          .apis(RequestHandlerSelectors.basePackage("re.aventu.microservice.controller"))
+          .paths(PathSelectors.any())                     
+          .build();
+    }
+}
